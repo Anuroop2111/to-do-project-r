@@ -32,6 +32,21 @@
         <p>Complete Tasks : {{task_}}</p>
 
         <button @click="show_list">View Tasks</button>
+
+          <ul v-for="(val,ky) in List_" v-bind:key="ky">
+                <span>{{ val }}</span> 
+                <br><br>
+          </ul>
+        <!-- <li :v-for="value in object">
+          {{ value }}
+        </li> -->
+
+        <!-- <div class="block_view" :v-for="item in this.List_">
+          console.log(item)
+          Title : {{item.title_}}
+          Task : {{obj.tasks}}
+
+        </div>  -->
   </div>
 </template>
 
@@ -85,13 +100,35 @@ addTask(){
         show_list(){
             console.log("called show_list")
             var len_ = this.List_.length
-            for (let i = 0; i<len_; i++){
-                // console.log("inside for loop")
-                console.log(`Title : ${this.List_[i].title_}, Tasks : ${this.List_[i].tasks}`)
+            return {
+
             }
+            // for (let i = 0; i<len_; i++){
+                // console.log("inside for loop")
+                // console.log(`Title : ${this.List_[i].title_}, Tasks : ${this.List_[i].tasks}`)
+                
+            }
+
+
         }
     }
 
-  }
+  
 
 </script>
+
+<style scoped>
+    .block_view{
+        padding: 100px 0; /* padding top and bottom are 10px, right and left are 0 */ 
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px; /*Margin for all sides of the element*/
+        display: inline-block;
+    }
+
+    ul {
+ text-align: center;
+ list-style-position: inside;
+}
+</style>

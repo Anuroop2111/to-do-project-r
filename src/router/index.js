@@ -9,7 +9,7 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
+    path: '/new-task',
     name: 'about',
     component: AboutView
   }
