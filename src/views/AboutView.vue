@@ -34,7 +34,7 @@
         <button @click="show_list">View Tasks</button>
   <div v-if="this.flag">
           <ul v-for="(val,ky) in List_" v-bind:key="ky">
-                <span>{{ val }}</span> 
+                <span>{{ky}}. Title : {{ val.title_ }} | Tasks : {{val.tasks}}</span> 
                 <br><br>
           </ul>
   </div>
