@@ -32,7 +32,7 @@
         <p>Complete Tasks : {{task_}}</p>
 
         <button @click="show_list">View Tasks</button>
-  <div v-if="show_list">
+  <div v-if="this.flag">
           <ul v-for="(val,ky) in List_" v-bind:key="ky">
                 <span>{{ val }}</span> 
                 <br><br>
@@ -64,7 +64,8 @@ export default {
             task_ : [],
             List_ : [
                 // {title:"",tasks : []} // This is the master List of all newly created lists.
-            ]
+            ],
+            flag : false
     }
   },
 
@@ -102,7 +103,7 @@ addTask(){
         show_list(){
             console.log("called show_list")
             var len_ = this.List_.length
-            
+            this.flag = true
             for (let i = 0; i<len_; i++){
                 console.log("inside for loop")
                 console.log(`Title : ${this.List_[i].title_}, Tasks : ${this.List_[i].tasks}`)
