@@ -32,11 +32,13 @@
         <p>Complete Tasks : {{task_}}</p>
 
         <button @click="show_list">View Tasks</button>
-
+  <div v-if="show_list">
           <ul v-for="(val,ky) in List_" v-bind:key="ky">
                 <span>{{ val }}</span> 
                 <br><br>
           </ul>
+  </div>
+
         <!-- <li :v-for="value in object">
           {{ value }}
         </li> -->
@@ -100,18 +102,19 @@ addTask(){
         show_list(){
             console.log("called show_list")
             var len_ = this.List_.length
-            return {
-
-            }
-            // for (let i = 0; i<len_; i++){
-                // console.log("inside for loop")
-                // console.log(`Title : ${this.List_[i].title_}, Tasks : ${this.List_[i].tasks}`)
+            
+            for (let i = 0; i<len_; i++){
+                console.log("inside for loop")
+                console.log(`Title : ${this.List_[i].title_}, Tasks : ${this.List_[i].tasks}`)
                 
             }
-
+            // return {
+            //   true
+            // }
 
         }
     }
+}
 
   
 
